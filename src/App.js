@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import { Button } from 'react-bootstrap';
 
 class QuoteDashboard extends Component {
-  currentQuote = 'People buy thing they dont need with money they dont have to impress people they dont care';
+  state = {
+    quote: ""
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
+        <header>
+          <h1>Random Quote Generator </h1>
         </header>
         <QuoteContent  />
-        <Button />
-        <TweetButton />
+        <ButtonContainer />
       </div>
     );
   }
@@ -26,18 +28,22 @@ class QuoteContent extends Component {
   }
 }
 
-class Button extends Component {
+class ButtonContainer extends Component {
   render() {
-    return(
-      <button> New Quote </button>
+    return (
+      <div>
+        <Button>New Quote</Button>
+        <TweetButton />
+      </div>
     );
   }
 }
 
+
 class TweetButton extends Component {
   render() {
     return (
-      <button> Tweet This Quote </button>
+      <Button> Tweet This Quote </Button>
     );
   }
 }
