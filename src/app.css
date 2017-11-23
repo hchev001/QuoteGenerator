@@ -15,11 +15,11 @@
 .contentGrid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   grid-gap: 1em;
   grid-template-areas:  "header header header"
                         "quote quote quote"
-                        "quoteBtn . tweetBtn";
+                        "tweetBtn . quoteBtn";
 
 }
 
@@ -34,10 +34,8 @@ header {
 
 .newQuote {
   grid-area: quoteBtn;
-  justify-self: start;
 }
 
 .tweet {
   grid-area: tweetBtn;
-  justify-self: end;
 }
