@@ -1,0 +1,41 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+
+
+.dashBoard {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  grid-template-areas:  "header header header"
+                        "quote quote quote"
+                        "tweetBtn . quoteBtn";
+
+}
+
+header {
+  grid-area: header;
+}
+
+
+.quote {
+  grid-area: quote;
+}
+
+.newQuote {
+  grid-area: quoteBtn;
+}
+
+.tweet {
+  grid-area: tweetBtn;
+}
