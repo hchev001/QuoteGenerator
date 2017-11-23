@@ -19,7 +19,7 @@
   grid-gap: 1em;
   grid-template-areas:  "header header header"
                         "quote quote quote"
-                        "newQuoteBtn blank tweetBtn";
+                        "quoteBtn . tweetBtn";
 
 }
 
@@ -27,18 +27,17 @@ header {
   grid-area: header;
 }
 
+
 .quote {
   grid-area: quote;
 }
 
 .newQuote {
-  grid-area: newQuoteBtn;
+  grid-area: quoteBtn;
+  justify-self: start;
 }
 
 .tweet {
   grid-area: tweetBtn;
-}
-
-.blank {
-  grid-area: blank;
+  justify-self: end;
 }

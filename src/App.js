@@ -10,7 +10,7 @@ class QuoteDashboard extends Component {
     <div className="wrapper">
       <div className="dashBoard">
         <div className="contentGrid">
-          <header className="header">
+          <header>
             <h1>Random Quote Generator </h1>
           </header>
           <QuoteContent  />
@@ -37,8 +37,8 @@ class QuoteContent extends Component {
 class ButtonContainer extends Component {
   render() {
     return (
-      <div className="newQuote">
-        <button className="btn">New Quote</button>
+      <div>
+        <button className="btn newQuote">New Quote</button>
         <TweetButton />
       </div>
     );
@@ -49,9 +49,7 @@ class ButtonContainer extends Component {
 class TweetButton extends Component {
   render() {
     return (
-      <div>
-        <button className="btn"> Tweet This Quote </button>
-      </div>
+        <button className="btn tweet"> Tweet This Quote </button>
     );
   }
 }
