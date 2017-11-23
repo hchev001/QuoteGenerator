@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './app.css';
 
 class QuoteDashboard extends Component {
   state = {
@@ -6,13 +7,17 @@ class QuoteDashboard extends Component {
   }
   render() {
     return (
-      <div className="App">
-          <header>
+    <div className="wrapper">
+      <div className="dashBoard">
+        <div className="contentGrid">
+          <header className="header">
             <h1>Random Quote Generator </h1>
           </header>
           <QuoteContent  />
           <ButtonContainer />
+        </div>
       </div>
+    </div>
     );
   }
 }
@@ -20,7 +25,7 @@ class QuoteDashboard extends Component {
 class QuoteContent extends Component {
   render() {
     return (
-    <div>
+    <div className="quote" >
       <p>
         People buy things they don't need with money they don't have to impress people that don't care.
       </p>
@@ -32,8 +37,8 @@ class QuoteContent extends Component {
 class ButtonContainer extends Component {
   render() {
     return (
-      <div>
-        <button>New Quote</button>
+      <div className="newQuote">
+        <button className="btn">New Quote</button>
         <TweetButton />
       </div>
     );
@@ -44,7 +49,9 @@ class ButtonContainer extends Component {
 class TweetButton extends Component {
   render() {
     return (
-      <button> Tweet This Quote </button>
+      <div>
+        <button className="btn"> Tweet This Quote </button>
+      </div>
     );
   }
 }
