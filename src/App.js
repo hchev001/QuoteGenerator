@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { getQuote } from './services/index';
 import './app.css';
 
+
 class QuoteDashboard extends Component {
 
   constructor(props){
@@ -11,12 +12,14 @@ class QuoteDashboard extends Component {
     this.getNewQuote = this.getNewQuote.bind(this);
 
     this.state = {
-      quote: "Sample quote text",
-      author: "sample quote author",
+      quote: "",
+      author: "",
     }
   }
 
-
+  componentDidMount() {
+    this.getNewQuote();
+  }
   handleNewQuoteOnClick = () => {
     this.getNewQuote();
   }
@@ -41,7 +44,8 @@ class QuoteDashboard extends Component {
             <h1>Random Quote Generator </h1>
           </header>
           <QuoteContent 
-            quote={this.state.quote} />
+            quote={this.state.quote}
+            author={this.state.author} />
           <TwitterButton
             quote={this.state.quote} />
           <Button 
@@ -58,7 +62,7 @@ class QuoteDashboard extends Component {
 const QuoteContent = (props) => {
   return (
     <div className="quote">
-      <p>{props.quote}</p>
+      <p>{props.quote} <br /> -{props.author}</p>
     </div>
   );
 }
