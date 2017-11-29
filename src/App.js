@@ -3,14 +3,19 @@ import { getQuote } from './services/index';
 import './app.css';
 
 class QuoteDashboard extends Component {
-  state = {
-    quote: "",
-    author: "",
+
+  constructor(props){
+    super(props);
+
+    this.handleNewQuoteOnClick = this.handleNewQuoteOnClick.bind(this);
+    this.getNewQuote = this.getNewQuote.bind(this);
+
+    this.state = {
+      quote: "Sample quote text",
+      author: "sample quote author",
+    }
   }
 
-  componentDidMount() {
-    this.getNewQuote();
-  }
 
   handleNewQuoteOnClick = () => {
     this.getNewQuote();
@@ -18,9 +23,11 @@ class QuoteDashboard extends Component {
 
   getNewQuote = () => {
     getQuote( (response) => {
-      this.setState({
+      this.setState(() => {
+        return {
         quote: response.quote,
         author: response.author
+        };
       });
     });
   };
@@ -35,10 +42,8 @@ class QuoteDashboard extends Component {
           </header>
           <QuoteContent 
             quote={this.state.quote} />
-          <Button
-            btnType="tweet"
-            handleOnClick={this.handleNewQuoteOnClick}
-            label="Tweet" />
+          <TwitterButton
+            quote={this.state.quote} />
           <Button 
             btnType="newQuote"
             handleOnClick={this.handleNewQuoteOnClick}
@@ -69,6 +74,25 @@ class Button extends Component {
           {this.props.label}
         </button>
       </div>
+    );
+  }
+}
+
+class TwitterButton extends Component {
+  constructor(props){
+    super(props);
+
+    this.encodeQuote = this.encodedQuote.bind(this);
+  }
+
+  encodedQuote(){
+    return encodeURI(this.props.quote);
+  }
+
+  render() {
+    const uri = "https://twitter.com/intent/tweet?text=" + this.encodedQuote();
+    return (
+      <a className="twitter-share-button" href={uri}> Tweet</a>
     );
   }
 }
