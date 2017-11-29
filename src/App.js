@@ -55,14 +55,12 @@ class QuoteDashboard extends Component {
   }
 }
 
-class QuoteContent extends Component {
-  render() {
-    return (
-    <div className="quote" >
-      <p>{this.props.quote}</p>
+const QuoteContent = (props) => {
+  return (
+    <div className="quote">
+      <p>{props.quote}</p>
     </div>
-    )
-  }
+  );
 }
 
 
