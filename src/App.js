@@ -62,7 +62,7 @@ class QuoteDashboard extends Component {
 const QuoteContent = (props) => {
   return (
     <div className="quote">
-      <p>{props.quote} <br /> -{props.author}</p>
+      <p>{props.quote} <br />-{props.author}</p>
     </div>
   );
 }
@@ -72,7 +72,7 @@ class Button extends Component {
   render() {
     return (
       <div className={this.props.btnType}>
-        <button className="btn" onClick={this.props.handleOnClick}>
+        <button className="btn newQuote" onClick={this.props.handleOnClick}>
           {this.props.label}
         </button>
       </div>
@@ -94,7 +94,7 @@ class TwitterButton extends Component {
   render() {
     const uri = "https://twitter.com/intent/tweet?text=" + this.encodedQuote();
     return (
-      <a className="twitter-share-button" href={uri}> Tweet</a>
+      <a className="twitter-share-button btn tweet" href={uri}> Tweet</a>
     );
   }
 }

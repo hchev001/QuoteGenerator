@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 1em;
+  background-color: papayawhip;
 }
 
 
@@ -14,6 +15,7 @@
 
 .contentGrid {
   display: grid;
+  background-color: plum;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 1em;
@@ -25,17 +27,22 @@
 
 header {
   grid-area: header;
+  text-align: center;
+  color: white;
 }
 
 
 .quote {
   grid-area: quote;
+  text-align: center;
 }
 
 .newQuote {
   grid-area: quoteBtn;
+  background-color: #ff99cc;
 }
 
 .tweet {
   grid-area: tweetBtn;
+  background-color: #ff99cc;
 }
